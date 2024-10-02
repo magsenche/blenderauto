@@ -1,0 +1,20 @@
+[project]
+name = "blenderauto"
+dynamic = ["version"]
+description = "Default template for PDM package"
+authors = [{ name = "Magsen Chebini", email = "magsen.che@gmail.com" }]
+dependencies = [
+    "bpy>=4.2.0",
+    "blenderauto @ file:///${PROJECT_ROOT}/",
+]
+requires-python = "==3.11.*"
+readme = "README.md"
+license = { text = "MIT" }
+
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.version]
+source = "call"
+getter = "src.blenderauto:get_version"
